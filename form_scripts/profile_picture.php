@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profilePicture"])) {
     }
 
     // Verificar tamaño máximo
-    if ($_FILES["profilePicture"]["size"] > 500000) {
+    if ($_FILES["profilePicture"]["size"] > 3000000) {
         $message = urlencode("El archivo es demasiado grande.");
         header("Location: ../profile.php?error=$message");
         $uploadOk = 0;
