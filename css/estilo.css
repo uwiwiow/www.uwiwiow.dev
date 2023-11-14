@@ -185,6 +185,12 @@
     width: 100%;
 }
 
+.profile {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .button:hover {
     color: var(--hover);
     cursor: pointer;

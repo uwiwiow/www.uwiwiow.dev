@@ -50,22 +50,27 @@ $message = isset($_GET['ready']) ? htmlspecialchars($_GET['ready']) : null;
     </nav>
 </header>
 <!--TODO cambiar estilos-->
-<p style="color: var(--fg3)">hello <?php echo $user_data['user_name'] ?>!</p>
 
-<h2 style="color: var(--fg3)">Subir Foto de Perfil</h2>
+<main class="profile">
+    <img src="uploads/<?php echo $user_data['profile_picture'] ?>" alt="Profile picture" width="100vh" height="100vh" style="border-radius: 50%">
 
-<form id="profilePictureForm" action="form_scripts/profile_picture.php" method="post" enctype="multipart/form-data">
-    <label for="profilePicture" style="color: var(--fg3)">Selecciona una foto de perfil:</label>
-    <input type="file" name="profilePicture" id="profilePicture" accept="image/*">
-</form>
+    <p style="color: var(--fg3)">hello <?php echo $user_data['user_name'] ?>!</p>
 
-<?php if ($error_message): ?>
-    <p style="color: var(--fg2)"><?php echo $error_message; ?></p>
-<?php endif; ?>
+    <h2 style="color: var(--fg3)">Subir Foto de Perfil</h2>
 
-<?php if ($message): ?>
-    <p style="color: var(--fg3)"><?php echo $message; ?></p>
-<?php endif; ?>
+    <form id="profilePictureForm" action="form_scripts/profile_picture.php" method="post" enctype="multipart/form-data">
+        <label for="profilePicture" style="color: var(--fg3)">Selecciona una foto de perfil:</label>
+        <input type="file" name="profilePicture" id="profilePicture" style="color: var(--fg3)" accept="image/jpeg,image/png,image/gif">
+    </form>
+
+    <?php if ($error_message): ?>
+        <p style="color: var(--fg2)"><?php echo $error_message; ?></p>
+    <?php endif; ?>
+
+    <?php if ($message): ?>
+        <p style="color: var(--fg3)"><?php echo $message; ?></p>
+    <?php endif; ?>
+</main>
 
 </body>
 </html>
