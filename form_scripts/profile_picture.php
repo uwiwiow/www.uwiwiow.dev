@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profilePicture"])) {
 
     // Si todas las verificaciones son exitosas, intenta subir el archivo
     if ($uploadOk == 1) {
-        if (move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $targetFile)) {
+
 
             try {
 
@@ -50,32 +50,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profilePicture"])) {
                 $result = $stmt->get_result();
                 $user_data = $result->fetch_assoc();
                 $filePath = '../uploads/' . $user_data['profile_picture'];
+                $default = 'default.png';
 
                 if ($result->num_rows > 0) {
-                    if (file_exists($filePath) && $user_data['profile_picture'] != 'default.png') {
+                    if (file_exists($filePath) && $user_data['profile_picture'] != $default) {
                         unlink($filePath);
                     }
                 }
 
                 $stmt = $con->prepare("update users set profile_picture = ? where user_id = ?");
-                $stmt->bind_param("si", $file_name, $_SESSION['user_id']);
 
-                $stmt->execute();
+                if (move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $targetFile)) {
+                    $stmt->bind_param("si", $file_name, $_SESSION['user_id']);
+                    $stmt->execute();
 
-                $stmt->close();
-                $con->close();
+                    $stmt->close();
+                    $con->close();
+                    $message = urlencode("Subido correctamente.");
+                    header("Location: ../profile.php?ready=$message");
+                } else {
+                    $stmt->bind_param("si", $default, $_SESSION['user_id']);
+                    $stmt->execute();
+
+                    $stmt->close();
+                    $con->close();
+                    $message = urlencode("Ocurrió un error al subir tu archivo.");
+                    header("Location: ../profile.php?error=$message");
+                }
+                die;
+
             } catch (Exception $e) {
                 $message = urlencode("Error en el servidor = $e");
                 header("Location: ../profile.php?error=$message");
             }
 
-
-            $message = urlencode("Subido correctamente.");
-            header("Location: ../profile.php?ready=$message");
-
-        } else {
-            $message = urlencode("Ocurrió un error al subir tu archivo.");
-            header("Location: ../profile.php?error=$message");
-        }
     }
 }

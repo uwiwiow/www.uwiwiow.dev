@@ -52,15 +52,16 @@ $message = isset($_GET['ready']) ? htmlspecialchars($_GET['ready']) : null;
 <!--TODO cambiar estilos-->
 
 <main class="profile">
-    <img src="uploads/<?php echo $user_data['profile_picture'] ?>" alt="Profile picture" width="100vh" height="100vh" style="border-radius: 50%">
-
-    <p style="color: var(--fg3)">hello <?php echo $user_data['user_name'] ?>!</p>
+    <section class="resource_config">
+        <p style="color: var(--fg3)">hello <?php echo $user_data['user_name'] ?>!</p>
+        <img src="uploads/<?php echo $user_data['profile_picture'] ?>" alt="Profile picture" width="100vh" height="100vh" style="border-radius: 50%">
+    </section>
 
     <h2 style="color: var(--fg3)">Subir Foto de Perfil</h2>
 
     <form id="profilePictureForm" action="form_scripts/profile_picture.php" method="post" enctype="multipart/form-data">
         <label for="profilePicture" style="color: var(--fg3)">Selecciona una foto de perfil:</label>
-        <input type="file" name="profilePicture" id="profilePicture" style="color: var(--fg3)" accept="image/jpeg,image/png,image/gif">
+        <input type="file" name="profilePicture" id="profilePicture" style="color: var(--fg3)" accept="image/*">
     </form>
 
     <?php if ($error_message): ?>
