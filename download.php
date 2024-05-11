@@ -48,12 +48,8 @@ $user_data = check_login();
 </header>
 <main class="main">
     <section class="resource">
-        <h2>Exposicion</h2>
-        <a class="a_button" href="assets/downloads/metodo-burbuja.pptx">Descargar</a>
-    </section>
-    <section class="resource">
-        <h2>Excel exposicion</h2>
-        <a class="a_button" href="assets/downloads/bubble-sort.xlsm">Descargar</a>
+        <h2>Kilq Music Player</h2>
+        <a class="a_button" href="assets/downloads/music.zip">Descargar</a>
     </section>
 </main>
 </body>

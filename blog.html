@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Gael</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #daffcb;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-post {
+            width: 90%;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .index-container {
+            width: 60%; /* Ancho del contenedor */
+            margin: 20px auto; /* Centrar el contenedor horizontalmente */
+            border: 1px solid #ccc;
+            background-color: #f8f9fa; /* Color de fondo gris */
+            padding: 10px;
+            text-align: left; /* Centra el texto dentro del contenedor */
+        }
+
+        .index-container ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .index-container ul li {
+            margin-bottom: 10px;
+            margin-left: 25px;
+        }
+
+        .index-container h2 {
+            text-align: center; /* Centra el índice */
+        }
+
+        .index-container ul li a {
+            text-decoration: none;
+            color: #6e6e6e;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .index-container ul li a:hover {
+            color: #007bff;
+        }
+
+        .image-container {
+            text-align: center; /* Centra el contenido */
+        }
+
+        .image-container img {
+            width: 60%; /* Ancho de la imagen */
+            border-radius: 10px; /* Bordes redondeados */
+            display: block; /* Asegura que la imagen se comporte como un bloque */
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+        }
+
+        .image-caption {
+            margin-top: 10px; /* Espacio entre la imagen y el texto */
+            font-size: 14px; /* Tamaño de fuente del texto */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        p.francesa {
+            text-indent: -30px;
+            padding-left: 40px
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .tags {
+            margin-top: 20px;
+        }
+
+        .tags a {
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .tags a:hover {
+            background-color: #ddd;
+        }
+
+        .tags br {
+                display: none;
+            }
+
+        @media only screen and (max-width: 600px) {
+            .blog-post {
+                margin: 5px auto;
+            }
+            .tags br {
+                display: block;
+            }
+
+            .index-container {
+                width: 90%; /* Ancho del contenedor */
+                margin: 20px auto; /* Centrar el contenedor horizontalmente */
+                border: 1px solid #ccc;
+                background-color: #f8f9fa; /* Color de fondo gris */
+                padding: 10px;
+                text-align: left; /* Centra el texto dentro del contenedor */
+            }
+
+            .index-container ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .index-container ul li {
+                margin-bottom: 10px;
+                margin-left: 10px;
+            }
+
+            .index-container h2 {
+                text-align: center; /* Centra el índice */
+            }
+
+            .index-container ul li a {
+                text-decoration: none;
+                color: #6e6e6e;
+                font-weight: bold;
+                transition: color 0.3s ease;
+            }
+
+            .index-container ul li a:hover {
+                color: #007bff;
+            }
+
+            .image-container {
+                text-align: center; /* Centra el contenido */
+            }
+
+            .image-container img {
+                width: 100%; /* Ancho máximo de la imagen */
+                height: auto; /* Altura automática para mantener la proporción */
+                border-radius: 10px; /* Bordes redondeados */
+                display: block; /* Asegura que la imagen se comporte como un bloque */
+                margin: 0 auto; /* Centra la imagen horizontalmente */
+            }
+
+            .image-caption {
+                margin-top: 10px; /* Espacio entre la imagen y el texto */
+                font-size: 14px; /* Tamaño de fuente del texto */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="blog-post">
+
+        <h1>Configuración y Administración del Espacio en Disco</h1>
+        <p>En el mundo de la administración de sistemas y bases de datos, la gestión del espacio en disco es una tarea fundamental para garantizar un rendimiento óptimo y una eficiente utilización de los recursos disponibles. En esta entrada de blog, exploraremos los conceptos clave relacionados con la configuración y administración del espacio en disco, desde la definición de espacio de almacenamiento hasta la asignación de cuotas de espacio para usuarios y objetos de la base de datos.</p>
+
+        <div class="index-container">
+            <h2>Índice de Temas</h2>
+            <ul>
+                <li><a href="#definicion-espacio-almacenamiento">Definición de Espacio de Almacenamiento</a></li>
+                <li><a href="#definicion-creacion-espacio-asignado">Definición y Creación del Espacio Asignado para Cada Base de Datos</a></li>
+                <li><a href="#asignacion-cuotas-espacio-usuarios">Asignación de Cuotas de Espacio para Usuarios</a></li>
+                <li><a href="#espacios-objetos-base-datos">Espacios para Objetos de la Base de Datos</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
+            </ul>
+        </div>
+        
+        <h2 id="definicion-espacio-almacenamiento">Definición de Espacio de Almacenamiento</h2>
+        <p>
+            El espacio de almacenamiento se refiere a la cantidad de memoria física disponible en un dispositivo de almacenamiento, como un disco duro o una unidad de estado sólido (SSD). Este espacio se utiliza para almacenar datos, programas y archivos del sistema operativo. Se mide típicamente en unidades como:
+            <ul>
+            <li>bytes</li>
+            <li>kilobytes (KB)</li>
+            <li>megabytes (MB)</li>
+            <li>gigabytes (GB)</li>
+            <li>terabytes (TB)</li>
+            </ul>
+        </p>
+        <div class="image-container">
+            <img src="media-blog/units.jpeg" alt="Unidades de el Byte">
+            <p class="image-caption">Una pirámide que demuestra visualmente la magnitud de las unidades</p>
+        </div>          
+        <br><br>
+
+        <h2 id="definicion-creacion-espacio-asignado">Definición y Creación del Espacio Asignado para Cada Base de Datos</h2>
+        <p>En los sistemas de gestión de bases de datos (DBMS), el espacio asignado para cada base de datos se refiere a la porción del espacio en disco reservada para almacenar los datos de esa base de datos específica. La creación de este espacio implica definir la ubicación en el disco donde se almacenarán los archivos de datos y de registro asociados con la base de datos.</p>
+        <div class="image-container">
+            <img src="media-blog/server.jpg" alt="Imagen de espacio en disco">
+            <p class="image-caption">Un Rack de discos duros en raid para almacenar grandes cantidades de información</p>
+        </div>
+        <br><br>
+
+        <h2 id="asignacion-cuotas-espacio-usuarios">Asignación de Cuotas de Espacio para Usuarios</h2>
+        <p>La asignación de cuotas de espacio para usuarios es una práctica común en entornos multiusuario para limitar la cantidad de espacio en disco que cada usuario puede utilizar. Esto ayuda a evitar que un usuario acapare todo el espacio disponible, lo que podría afectar negativamente a otros usuarios del sistema. Las cuotas de espacio se pueden configurar en función de la cantidad total de espacio en disco o de la cantidad de espacio disponible después de la asignación de espacio para otras bases de datos y sistemas.</p>
+        <div class="image-container">
+            <img src="media-blog/quota.gif" alt="Imagen del proceso de las cuotas de espacio">
+            <p class="image-caption">Una imagen del proceso de las cuotas de espacio<br>
+            Traducción: Creación de la cuota -> Aprobación de la cuota -> Creación del espacio de asignación de la cuota -> Activar el espacio de la asignación de la cuota</p>
+        </div>
+        <br><br>
+
+        <h2 id="espacios-objetos-base-datos">Espacios para Objetos de la Base de Datos</h2>
+        <p>Los objetos de la base de datos, como tablas, índices, vistas y procedimientos almacenados, también requieren espacio en disco para su almacenamiento. La gestión eficaz de estos espacios es fundamental para garantizar un rendimiento óptimo del sistema de base de datos. Esto implica asignar espacio suficiente para cada tipo de objeto, monitorear el crecimiento de los datos y realizar ajustes según sea necesario para optimizar el uso del espacio en disco y garantizar un funcionamiento suave del sistema de base de datos.</p>
+        <div class="image-container">
+            <img src="media-blog/objetos.png" alt="Imagen de el tamaño de una tabla de una base de datos">
+            <p class="image-caption">Una imagen de el tamaño de una tabla de una base de datos</p>
+        </div>
+        <br><br>
+
+        <h2 id="conclusion">Conclusión</h2>
+        <p>En conclusión, la configuración y administración del espacio en disco son aspectos críticos en el mantenimiento de sistemas y bases de datos. A través de una gestión eficaz del espacio, podemos garantizar un rendimiento óptimo, evitar la sobrecarga del sistema y proporcionar un entorno de trabajo estable para los usuarios. Recuerden siempre monitorear el uso del espacio y ajustar la configuración según sea necesario para adaptarse a las necesidades cambiantes del sistema.</p>
+
+        <h2 id="referencias">Referencias</h2>
+        <p class="francesa">Mullins, C. S. (2019). Database Administration: The Complete Guide to DBA Practices and Procedures. Addison-Wesley Professional.</p>
+        <p class="francesa">Assaf, W., West, R., Aelterman, S., & Curnutt, M. (2018). SQL Server 2017 Administration Inside Out. Microsoft Press.</p>
+        <p class="francesa">SQLShack. (s.f.). SQLShack. Recuperado de https://www.sqlshack.com</p>
+
+        <div class="tags">
+            <strong>Etiquetas:</strong>
+            <a href="#">Bases de Datos</a> <br> <br>
+            <a href="#">Administración del Espacio</a> <br> <br>
+            <a href="#">Configuración</a> <br> <br>
+        </div>
+    </div>
+</body>
+</html>
