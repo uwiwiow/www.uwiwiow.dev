@@ -25,5 +25,5 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -v -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.HOST }} <<'ENDSSH'
           cd ${{ secrets.APP_PATH }}
           git pull origin main
-          sudo systemctl reload ${{ secrets.SERVICE }}
+          sudo /usr/sbin/service ${{ secrets.SERVICE }} reload
           ENDSSH
